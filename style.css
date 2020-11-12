@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=PT+Serif:wght@700&family=Poppins:wght@400;600&display=swap");
+
+:root {
+  /* Font family */
+  --secondary-font: "PT Serif", serif;
+  --primary-font: "Poppins", sans-serif;
+  --footer-font: "Montserrat", sans-serif;
+  /* Font weight */
+  --bolder: 700;
+  --bold: 600;
+  --regular: 400;
+
+  /* Breakpoints */
+  --mobile: 600px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+}
+
+body {
+  margin: 0;
+  padding: 8px 12px;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: var(--secondary-font);
+  font-weight: var(--bolder);
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+
+section h2 {
+  font-weight: var(--bold);
+  font-size: 18px;
+}
+
+section p {
+  font-weight: var(--regular);
+  font-size: clamp(14px, var(--mobile), 18px);
+  width: 250px;
+}
+
+main {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+}
+
+main > div img {
+  width: 100%;
+}
+
+main > div {
+  position: relative;
+  width: 98%;
+}
+
+main > div:nth-child(2n) {
+  margin-top: 50px;
+}
+
+main > div .name {
+  font-weight: var(--bold);
+  font-size: clamp(14px, var(--mobile), 18px);
+}
+
+main > div .role {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: top left;
+  transform: translateX(122%) rotate(90deg);
+  width: max-content;
+  font-family: var(--secondary-font);
+  font-weight: var(--regular);
+  font-size: clamp(10px, var(--mobile), 12px);
+  text-transform: uppercase;
+}
+
+main > div:first-child .role {
+  transform: translateX(114%) rotate(90deg);
+}
+
+main > div:nth-child(2) .role {
+  transform: translateX(119%) rotate(90deg);
+}
+
+footer {
+  font-family: var(--footer-font);
+  font-weight: var(--regular);
+  text-align: center;
+  padding: 20px 0;
+  color: #a9a9a9;
+  margin-top: 80px;
+}
+
+@media (orientation: landscape) {
+  body {
+    margin: 20px 200px;
+  }
+
+  body > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main {
+    column-gap: 140px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main > div:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  main > div:nth-child(2),
+  main > div:nth-child(5) {
+    margin-top: 80px;
+  }
+}
